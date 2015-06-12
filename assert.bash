@@ -87,3 +87,16 @@ refute_line() {
     done
   fi
 }
+
+assert_line_starts_with() {
+  if [ "$1" -ge 0 ] 2>/dev/null; then
+    assert_equal "$2" "${lines[$1]}"
+  else
+    local line
+    for line in "${lines[@]}"; do
+      if [ -n "${line#${1}}" ]; then return 0; fi
+    done
+    flunk "expected line \`$1'"
+  fi
+}
+
