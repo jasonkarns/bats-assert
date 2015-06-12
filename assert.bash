@@ -59,3 +59,31 @@ assert_output_contains() {
     } | flunk
   }
 }
+
+assert_line() {
+  if [ "$1" -ge 0 ] 2>/dev/null; then
+    assert_equal "$2" "${lines[$1]}"
+  else
+    local line
+    for line in "${lines[@]}"; do
+      if [ "$line" = "$1" ]; then return 0; fi
+    done
+    flunk "expected line \`$1'"
+  fi
+}
+
+refute_line() {
+  if [ "$1" -ge 0 ] 2>/dev/null; then
+    local num_lines="${#lines[@]}"
+    if [ "$1" -lt "$num_lines" ]; then
+      flunk "output has $num_lines lines"
+    fi
+  else
+    local line
+    for line in "${lines[@]}"; do
+      if [ "$line" = "$1" ]; then
+        flunk "expected to not find line \`$line'"
+      fi
+    done
+  fi
+}
