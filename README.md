@@ -14,7 +14,7 @@ git commit -am 'added bats-assert module'
 then in `tests/test_helper.bash`:
 
 ```
-load load helpers/assertions/all
+load helpers/assertions/all
 ```
 
 ## Assertion API
