@@ -21,89 +21,90 @@ load helpers/assertions/all
 
 **assert**: asserts truthy value
 
-    ``` bash
-    assert "blue skies"
-    ```
+``` bash
+assert "blue skies"
+```
 
 **flunk**: forces a test failure with an optional message
 
-    ``` bash
-    flunk
-    # or
-    flunk "expected blue skies"
-    ```
+``` bash
+flunk
+# or
+flunk "expected blue skies"
+```
 
 **assert_success**: asserts successful exit `$status` and `$output`
 
-    ``` bash
-    run my-command
+``` bash
+run my-command
 
-    assert_success
-    # or
-    assert_success "expected output"
-    ```
+assert_success
+# or
+assert_success "expected output"
+```
 
 **assert_failure**: asserts unsuccessful exit `$status` and `$output`
 
-    ``` bash
-    run my-command
+``` bash
+run my-command
 
-    assert_failure
-    # or
-    assert_failure "expected output"
-    ```
+assert_failure
+# or
+assert_failure "expected output"
+```
 
 **assert_equal**: asserts equality
 
-    ``` bash
-    actual="$(my-command)"
-    expected="my results"
+``` bash
+actual="$(my-command)"
+expected="my results"
 
-    assert_equal expected actual
-    ```
+assert_equal expected actual
+```
 
 **assert_output**: asserts `$output`
 
-    ```
-    run my-command
+```
+run my-command
 
-    assert_output "my results"
-    ```
+assert_output "my results"
+```
 
 **assert_output_contains**: asserts `$output` contains argument
 
-    ```
-    run my-command
+```
+run my-command
 
-    assert_output_contains "results"
-    ```
+assert_output_contains "results"
+```
 
 **assert_line**: asserts `$output` contains given line (at optional line index)
 
-    ```
-    run my-command
+```
+run my-command
 
-    assert_line "my results"
-    # or
-    assert_line 0 "my results"
-    ```
+assert_line "my results"
+# or
+assert_line 0 "my results"
+```
 
 **refute_line**: asserts `$output` does *not* contain given line
 
-    ```
-    run my-command
+```
+run my-command
 
-    refute_line "thirsty rando"
-    ```
+refute_line "thirsty rando"
+```
 
 **assert_line_starts_with**: asserts `$output` contains a line starting with argument
-    ```
-    run my-command
 
-    assert_line_starts_with "my"
-    # or
-    assert_line_starts_with 0 "my"
-    ```
+```
+run my-command
+
+assert_line_starts_with "my"
+# or
+assert_line_starts_with 0 "my"
+```
 
 ## Credits
 
