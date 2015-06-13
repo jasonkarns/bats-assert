@@ -103,3 +103,11 @@ load load helpers/assertions/all
     # or
     assert_line_starts_with 0 "my"
     ```
+
+## Credits
+
+Assertion functions taken from the test_helpers of [rbenv][], [ruby-build][], and [rbenv-aliases][]. Many thanks to their authors and contributors: [Sam Stephenson](https://github.com/sstephenson), [Mislav Marohnić](https://github.com/mislav), and [Tim Pope](https://github.com/tpope).
+
+[rbenv]:https://github.com/sstephenson/rbenv
+[ruby-build]:https://github.com/sstephenson/ruby-build
+[rbenv-aliases]:https://github.com/tpope/rbenv-aliases
