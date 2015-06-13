@@ -3,7 +3,8 @@ Assertion library for BATS (Bash Automated Testing System)
 
 ## Installation
 
-Recommended installation is via git submodule. Assuming your project's bats tests are in `tests`:
+Recommended installation is via git submodule. Assuming your project's bats
+tests are in `tests`:
 
 ```
 git submodule add https://github.com/jasonkarns/bats-assert tests/helpers/assertions
@@ -106,7 +107,10 @@ load load helpers/assertions/all
 
 ## Credits
 
-Assertion functions taken from the test_helpers of [rbenv][], [ruby-build][], and [rbenv-aliases][]. Many thanks to their authors and contributors: [Sam Stephenson](https://github.com/sstephenson), [Mislav Marohnić](https://github.com/mislav), and [Tim Pope](https://github.com/tpope).
+Assertion functions taken from the test_helpers of [rbenv][], [ruby-build][],
+and [rbenv-aliases][]. Many thanks to their authors and contributors: [Sam
+Stephenson](https://github.com/sstephenson), [Mislav
+Marohnić](https://github.com/mislav), and [Tim Pope](https://github.com/tpope).
 
 [rbenv]:https://github.com/sstephenson/rbenv
 [ruby-build]:https://github.com/sstephenson/ruby-build
