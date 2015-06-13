@@ -90,13 +90,12 @@ refute_line() {
 
 assert_line_starts_with() {
   if [ "$1" -ge 0 ] 2>/dev/null; then
-    assert_equal "$2" "${lines[$1]}"
+    if [ -n "${lines[$1]#${2}}" ]; then return 0; fi
   else
     local line
     for line in "${lines[@]}"; do
       if [ -n "${line#${1}}" ]; then return 0; fi
     done
-    flunk "expected line \`$1'"
   fi
+  flunk "expected a line to start with \`$1'"
 }
-
