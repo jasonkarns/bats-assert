@@ -54,9 +54,10 @@ load ../all
   output="good job"
 
   set +e
-  assert_success "my bad"
+  stderr=$( { assert_success "my bad"; } 2>&1 )
   status=$?
   set -e
 
   test $status = 1
+  test "$stderr" = $'expected: my bad\nactual:   good job'
 }
