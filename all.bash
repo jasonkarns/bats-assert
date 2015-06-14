@@ -1,16 +1,15 @@
-assert() {
-  if ! "$@"; then
-    flunk "failed: $@"
-  fi
-}
-
-
 flunk() {
   { if [ "$#" -eq 0 ]; then cat -
     else echo "$@"
     fi
   } | sed "s:${TMP}:\${TMP}:g" >&2
   return 1
+}
+
+assert() {
+  if ! "$@"; then
+    flunk "failed: $@"
+  fi
 }
 
 assert_success() {
