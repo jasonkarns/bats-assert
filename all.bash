@@ -2,7 +2,7 @@ flunk() {
   { if [ "$#" -eq 0 ]; then cat -
     else echo "$@"
     fi
-  } | sed "s:${TMP}:\${TMP}:g" >&2
+  } | sed "s:${BATS_TMPDIR}:\${BATS_TMPDIR}:g" >&2
   return 1
 }
 
