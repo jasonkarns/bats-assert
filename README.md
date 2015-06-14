@@ -19,10 +19,10 @@ load helpers/assertions/all
 
 ## Assertion API
 
-**assert**: asserts truthy value
+**assert**: asserts command returns successfully
 
 ``` bash
-assert "blue skies"
+assert "my-command"
 ```
 
 **flunk**: forces a test failure with an optional message
