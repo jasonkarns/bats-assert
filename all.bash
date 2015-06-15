@@ -95,6 +95,10 @@ refute_line() {
     local line
     for line in "${lines[@]}"; do
       if [ "$line" = "$1" ]; then
+        { echo "expected to not find line: $line"
+          echo "in:"
+          ( IFS=$'\n'; echo "${lines[*]}" )
+        } | flunk
         return $? # in case flunk didn't exit the loop
       fi
     done

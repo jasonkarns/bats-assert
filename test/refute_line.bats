@@ -23,3 +23,11 @@ setup() {
 
   test $status = 0
 }
+
+@test "refute_line should emit error message when it fails" {
+  set +e
+  stderr=$( { refute_line "red fish"; } 2>&1 )
+  set -e
+
+  test "$stderr" = $'expected to not find line: red fish\nin:\none fish\ntwo fish\nred fish\nblue fish'
+}
