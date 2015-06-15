@@ -95,7 +95,7 @@ refute_line() {
     local line
     for line in "${lines[@]}"; do
       if [ "$line" = "$1" ]; then
-        flunk "expected to not find line \`$line'"
+        return $? # in case flunk didn't exit the loop
       fi
     done
   fi
