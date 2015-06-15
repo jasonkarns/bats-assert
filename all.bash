@@ -119,15 +119,3 @@ refute_line() {
     done
   fi
 }
-
-assert_line_starts_with() {
-  if [ "$1" -ge 0 ] 2>/dev/null; then
-    if [ -n "${lines[$1]#${2}}" ]; then return 0; fi
-  else
-    local line
-    for line in "${lines[@]}"; do
-      if [ -n "${line#${1}}" ]; then return 0; fi
-    done
-  fi
-  flunk "expected a line to start with \`$1'"
-}

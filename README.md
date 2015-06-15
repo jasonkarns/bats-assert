@@ -114,16 +114,6 @@ run my-command
 refute_line "thirsty rando"
 ```
 
-**assert_line_starts_with**: asserts `$output` contains a line starting with argument
-
-```
-run my-command
-
-assert_line_starts_with "my"
-# or
-assert_line_starts_with 0 "my"
-```
-
 ## Credits
 
 Assertion functions taken from the test_helpers of [rbenv][], [ruby-build][],
