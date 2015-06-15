@@ -19,18 +19,24 @@ load helpers/assertions/all
 
 ## Assertion API
 
-**assert**: asserts command returns successfully
-
-``` bash
-assert "my-command"
-```
-
 **flunk**: forces a test failure with an optional message
 
 ``` bash
 flunk
 # or
 flunk "expected blue skies"
+```
+
+**assert**: asserts command returns successfully
+
+``` bash
+assert "my-command"
+```
+
+**refute**: asserts command returns unsuccessfully
+
+``` bash
+refute "my-invalid-command"
 ```
 
 **assert_success**: asserts successful exit `$status` and `$output`

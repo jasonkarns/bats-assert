@@ -12,6 +12,12 @@ assert() {
   fi
 }
 
+refute() {
+  if "$@"; then
+    flunk "succeeded: $@"
+  fi
+}
+
 assert_success() {
   if [ "$status" -ne 0 ]; then
     { echo "command failed with exit status $status"
