@@ -2,9 +2,11 @@
 
 load ../all
 
-@test "assert_output should pass when it matches" {
+setup() {
   output=foo
+}
 
+@test "assert_output should pass when it matches" {
   set +e
   assert_output foo
   status=$?
@@ -14,8 +16,6 @@ load ../all
 }
 
 @test "assert_output should fail when it doesn't match" {
-  output=foo
-
   set +e
   assert_output bar
   status=$?
@@ -25,8 +25,6 @@ load ../all
 }
 
 @test "assert_output should emit error message when fails" {
-  output=foo
-
   set +e
   stderr=$( { assert_output bar; } 2>&1 )
   set -e
@@ -35,8 +33,6 @@ load ../all
 }
 
 @test "assert_output can take argument from STDIN" {
-  output=foo
-
   set +e
   stderr=$( { echo bar | assert_output; } 2>&1 )
   status=$?

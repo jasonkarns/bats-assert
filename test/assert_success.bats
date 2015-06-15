@@ -2,10 +2,12 @@
 
 load ../all
 
-@test "assert_success should pass on 0 \$status" {
+setup() {
   status=0
-  output="cmd output"
+  output="good job"
+}
 
+@test "assert_success should pass on 0 \$status" {
   set +e
   assert_success
   status=$?
@@ -16,7 +18,6 @@ load ../all
 
 @test "assert_success should fail on non-zero \$status" {
   status=1
-  output="cmd output"
 
   set +e
   assert_success
@@ -38,9 +39,6 @@ load ../all
 }
 
 @test "assert_success should pass when output matches argument" {
-  status=0
-  output="good job"
-
   set +e
   assert_success "good job"
   status=$?
@@ -50,9 +48,6 @@ load ../all
 }
 
 @test "assert_success should fail when output doesn't match argument" {
-  status=0
-  output="good job"
-
   set +e
   stderr=$( { assert_success "my bad"; } 2>&1 )
   status=$?

@@ -2,9 +2,11 @@
 
 load ../all
 
-@test "assert_output_contains should pass when true" {
+setup() {
   output=foobar
+}
 
+@test "assert_output_contains should pass when true" {
   set +e
   assert_output_contains bar
   status=$?
@@ -14,10 +16,8 @@ load ../all
 }
 
 @test "assert_output_contains should fail when it doesn't match" {
-  output=foo
-
   set +e
-  assert_output_contains bar
+  assert_output_contains baz
   status=$?
   set -e
 
@@ -25,23 +25,19 @@ load ../all
 }
 
 @test "assert_output_contains should emit error message when fails" {
-  output=foo
-
   set +e
-  stderr=$( { assert_output_contains bar; } 2>&1 )
+  stderr=$( { assert_output_contains baz; } 2>&1 )
   set -e
 
-  test "$stderr" = $'expected:   foo\nto contain: bar'
+  test "$stderr" = $'expected:   foobar\nto contain: baz'
 }
 
 @test "assert_output_contains can take argument from STDIN" {
-  output=foo
-
   set +e
-  stderr=$( { echo bar | assert_output_contains; } 2>&1 )
+  stderr=$( { echo baz | assert_output_contains; } 2>&1 )
   status=$?
   set -e
 
   test $status = 1
-  test "$stderr" = $'expected:   foo\nto contain: bar'
+  test "$stderr" = $'expected:   foobar\nto contain: baz'
 }
