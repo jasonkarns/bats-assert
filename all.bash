@@ -78,7 +78,10 @@ assert_line() {
     for line in "${lines[@]}"; do
       if [ "$line" = "$1" ]; then return 0; fi
     done
-    flunk "expected line \`$1'"
+    { echo "expected line: $1"
+      echo "to be found in:"
+      ( IFS=$'\n'; echo "${lines[*]}" )
+    } | flunk
   fi
 }
 
