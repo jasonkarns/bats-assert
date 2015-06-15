@@ -44,6 +44,12 @@ assert_equal() {
   fi
 }
 
+refute_equal() {
+  if [ "$1" = "$2" ]; then
+    flunk "unexpectedly equal: $1"
+  fi
+}
+
 assert_contains() {
   local haystack="$1"
   local needle="$2"
