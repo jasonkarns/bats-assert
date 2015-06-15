@@ -50,6 +50,10 @@ refute_equal() {
   fi
 }
 
+assert_not_equal() {
+  refute_equal "$@"
+}
+
 assert_contains() {
   local haystack="$1"
   local needle="$2"
