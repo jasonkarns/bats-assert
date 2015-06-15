@@ -71,7 +71,13 @@ assert_equal expected actual
 **assert_contains**: asserts x contains y
 
 ```
-assert_contains foobar foo
+assert_contains foobar oo
+```
+
+**assert_starts_with**: asserts x starts with y
+
+```
+assert_starts_with foobar foo
 ```
 
 **assert_output**: asserts `$output`

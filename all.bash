@@ -64,6 +64,14 @@ assert_contains() {
   }
 }
 
+assert_starts_with() {
+  if [ "$1" = "${1#${2}}" ]; then
+    { echo "expected: $1"
+      echo "to start with: $2"
+    } | flunk
+  fi
+}
+
 assert_output() {
   local expected
   if [ $# -eq 0 ]; then expected="$(cat -)"
