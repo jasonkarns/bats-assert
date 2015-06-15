@@ -31,5 +31,5 @@ load ../all
   stderr=$( { assert_output_contains bar; } 2>&1 )
   set -e
 
-  test "$stderr" = $'expected output to contain bar\nactual: foo'
+  test "$stderr" = $'expected:   foo\nto contain: bar'
 }
