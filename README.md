@@ -62,6 +62,12 @@ expected="my results"
 assert_equal expected actual
 ```
 
+**assert_contains**: asserts x contains y
+
+```
+assert_contains foobar foo
+```
+
 **assert_output**: asserts `$output`
 
 ```

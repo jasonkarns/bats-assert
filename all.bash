@@ -38,6 +38,16 @@ assert_equal() {
   fi
 }
 
+assert_contains() {
+  local haystack="$1"
+  local needle="$2"
+  echo "$haystack" | $(type -p ggrep grep | head -1) -F "$needle" >/dev/null || {
+    { echo "expected:   $haystack"
+      echo "to contain: $needle"
+    } | flunk
+  }
+}
+
 assert_output() {
   local expected
   if [ $# -eq 0 ]; then expected="$(cat -)"
