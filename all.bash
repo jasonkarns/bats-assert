@@ -97,10 +97,7 @@ assert_line() {
 
 refute_line() {
   if [ "$1" -ge 0 ] 2>/dev/null; then
-    local num_lines="${#lines[@]}"
-    if [ "$1" -lt "$num_lines" ]; then
-      flunk "output has $num_lines lines"
-    fi
+    refute_equal "$2" "${lines[$1]}"
   else
     local line
     for line in "${lines[@]}"; do
