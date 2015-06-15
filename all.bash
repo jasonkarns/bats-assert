@@ -57,10 +57,9 @@ assert_output() {
 }
 
 assert_output_contains() {
-  local expected="$1"
-  if [ -z "$expected" ]; then
-    echo "assert_output_contains needs an argument" >&2
-    return 1
+  local expected
+  if [ $# -eq 0 ]; then expected="$(cat -)"
+  else expected="$1"
   fi
   assert_contains "$output" "$expected"
 }

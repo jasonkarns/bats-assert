@@ -33,3 +33,15 @@ load ../all
 
   test "$stderr" = $'expected:   foo\nto contain: bar'
 }
+
+@test "assert_output_contains can take argument from STDIN" {
+  output=foo
+
+  set +e
+  stderr=$( { echo bar | assert_output_contains; } 2>&1 )
+  status=$?
+  set -e
+
+  test $status = 1
+  test "$stderr" = $'expected:   foo\nto contain: bar'
+}
