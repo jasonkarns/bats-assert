@@ -13,7 +13,7 @@ git commit -am 'added bats-assert module'
 
 then in `test/test_helper.bash`:
 
-``` sh
+``` bash
 load helpers/assertions/all
 ```
 
