@@ -4,14 +4,14 @@ Assertion library for BATS (Bash Automated Testing System)
 ## Installation
 
 Recommended installation is via git submodule. Assuming your project's bats
-tests are in `tests`:
+tests are in `test`:
 
 ``` sh
-git submodule add https://github.com/jasonkarns/bats-assert tests/helpers/assertions
+git submodule add https://github.com/jasonkarns/bats-assert test/helpers/assertions
 git commit -am 'added bats-assert module'
 ```
 
-then in `tests/test_helper.bash`:
+then in `test/test_helper.bash`:
 
 ``` sh
 load helpers/assertions/all
@@ -23,14 +23,14 @@ That is all that's necessary to get the assertion helpers into your project. How
 Enable sparse-checkout *from the submodule directory*:
 
 ``` sh
-cd tests/helpers/assertions
+cd test/helpers/assertions
 git config core.sparsecheckout true
 ```
 
 Then configure explictly list the files you wish to have checked out. From the root of your project:
 
 ``` sh
-echo all.bash >> .git/modules/tests/helpers/assertions/info/sparse-checkout
+echo all.bash >> .git/modules/test/helpers/assertions/info/sparse-checkout
 ```
 
 ## Assertion API
