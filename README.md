@@ -17,9 +17,10 @@ then in `tests/test_helper.bash`:
 load helpers/assertions/all
 ```
 
+### sparse-checkout
 That is all that's necessary to get the assertion helpers into your project. However, as a submodule, it pulls in this entire repo. If you'd like only the assertions file (`all.bash`), you'll need to configure the submodule for sparse-checkout.
 
-Enable sparse checkout *from the submodule directory*:
+Enable sparse-checkout *from the submodule directory*:
 
 ``` sh
 cd tests/helpers/assertions
