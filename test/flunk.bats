@@ -27,7 +27,7 @@ load ../all
   test "$stderr" = "message"
 }
 
-@test "funk replaces \$BATS_TMPDIR" {
+@test "flunk replaces \$BATS_TMPDIR" {
   set +e
   stderr=$( { flunk "bats tmpdir: $BATS_TMPDIR"; } 2>&1 )
   set -e
