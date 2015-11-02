@@ -46,16 +46,18 @@ flunk "expected blue skies"
 **assert**: asserts command returns successfully
 
 ``` bash
-assert "my-command"
+assert my-command
+assert [ 2 -eq 2 ]
 ```
 
 **refute**: asserts command returns unsuccessfully
 
 ``` bash
-refute "my-invalid-command"
+refute invalid-command
+refute [ 2 -eq 3 ]
 ```
 
-**assert_success**: asserts successful exit `$status` and `$output`
+**assert_success**: asserts successful exit `$status` with (optional) `$output`
 
 ``` bash
 run my-command
@@ -65,7 +67,7 @@ assert_success
 assert_success "expected output"
 ```
 
-**assert_failure**: asserts unsuccessful exit `$status` and `$output`
+**assert_failure**: asserts unsuccessful exit `$status` with (optional) `$output`
 
 ``` bash
 run my-command
