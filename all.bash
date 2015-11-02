@@ -14,7 +14,7 @@ assert() {
 
 refute() {
   if "$@"; then
-    flunk "succeeded: $@"
+    flunk "expected to fail: $@"
   fi
 }
 
