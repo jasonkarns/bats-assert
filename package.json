@@ -19,6 +19,9 @@
     "test": "bats test"
   },
   "main": "all.bash",
+  "files": [
+    "all.bash"
+  ],
   "directories": {
     "test": "test"
   },
