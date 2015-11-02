@@ -25,6 +25,12 @@
   "directories": {
     "test": "test"
   },
+  "peerDependencies": {
+    "bats": "^0.4.2"
+  },
+  "devDependencies": {
+    "bats": "^0.4.2"
+  },
   "license": "MIT",
   "keywords": [
     "bash",
