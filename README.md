@@ -17,20 +17,17 @@ then in `test/test_helper.bash`:
 load helpers/assertions/all
 ```
 
-### sparse-checkout
-That is all that's necessary to get the assertion helpers into your project. However, as a submodule, it pulls in this entire repo. If you'd like only the assertions file (`all.bash`), you'll need to configure the submodule for sparse-checkout.
+(Optionally configure [sparse-checkout](http://git-scm.com/docs/git-read-tree#_sparse_checkout) if you're concerned with all the non-essential files being in your repo)
 
-Enable sparse-checkout *from the submodule directory*:
+Also available as an [npm module](https://www.npmjs.com/package/bats-assert) if you're into that sort of thing.
 
 ``` sh
-cd test/helpers/assertions
-git config core.sparsecheckout true
+npm install --save-dev bats-assert
 ```
+then in `test/test_helper.bash`:
 
-Then configure explictly list the files you wish to have checked out. From the root of your project:
-
-``` sh
-echo all.bash >> .git/modules/test/helpers/assertions/info/sparse-checkout
+``` bash
+load ../node_modules/bats-assert/all
 ```
 
 ## Assertion API
