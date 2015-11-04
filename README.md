@@ -24,6 +24,7 @@ Also available as an [npm module](https://www.npmjs.com/package/bats-assert) if 
 ``` sh
 npm install --save-dev bats-assert
 ```
+
 then in `test/test_helper.bash`:
 
 ``` bash
