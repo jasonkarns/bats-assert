@@ -33,7 +33,8 @@ load ../node_modules/bats-assert/all
 
 ## Assertion API
 
-**flunk**: forces a test failure with an optional message
+### flunk
+forces a test failure with an optional message
 
 ``` bash
 flunk
@@ -41,21 +42,24 @@ flunk
 flunk "expected blue skies"
 ```
 
-**assert**: asserts command returns successfully
+### assert
+asserts command returns successfully
 
 ``` bash
 assert my-command
 assert [ 2 -eq 2 ]
 ```
 
-**refute**: asserts command returns unsuccessfully
+### refute
+asserts command returns unsuccessfully
 
 ``` bash
 refute invalid-command
 refute [ 2 -eq 3 ]
 ```
 
-**assert_success**: asserts successful exit `$status` with (optional) `$output`
+### assert_success
+asserts successful exit `$status` with (optional) `$output`
 
 ``` bash
 run my-command
@@ -65,7 +69,8 @@ assert_success
 assert_success "expected output"
 ```
 
-**assert_failure**: asserts unsuccessful exit `$status` with (optional) `$output`
+### assert_failure
+asserts unsuccessful exit `$status` with (optional) `$output`
 
 ``` bash
 run my-command
@@ -75,7 +80,8 @@ assert_failure
 assert_failure "expected output"
 ```
 
-**assert_equal**: asserts equality
+### assert_equal
+asserts equality
 
 ``` bash
 actual="$(my-command)"
@@ -84,25 +90,29 @@ expected="my results"
 assert_equal expected actual
 ```
 
-**assert_contains**: asserts x contains y
+### assert_contains
+asserts x contains y
 
 ```
 assert_contains foobar oo
 ```
 
-**refute_contains**: asserts x does not contain y
+### refute_contains
+asserts x does not contain y
 
 ```
 refute_contains foobar baz
 ```
 
-**assert_starts_with**: asserts x starts with y
+### assert_starts_with
+asserts x starts with y
 
 ```
 assert_starts_with foobar foo
 ```
 
-**assert_output**: asserts `$output`
+### assert_output
+asserts `$output`
 
 ```
 run my-command
@@ -110,7 +120,8 @@ run my-command
 assert_output "my results"
 ```
 
-**assert_output_contains**: asserts `$output` contains argument
+### assert_output_contains
+asserts `$output` contains argument
 
 ```
 run my-command
@@ -118,7 +129,8 @@ run my-command
 assert_output_contains "results"
 ```
 
-**refute_output_contains**: asserts `$output` does not contain argument
+### refute_output_contains
+asserts `$output` does not contain argument
 
 ```
 run my-command
@@ -126,7 +138,8 @@ run my-command
 refute_output_contains "unicorn"
 ```
 
-**assert_line**: asserts `$output` contains given line (at optional line index)
+### assert_line
+asserts `$output` contains given line (at optional line index)
 
 ```
 run my-command
@@ -136,7 +149,8 @@ assert_line "my results"
 assert_line 0 "my results"
 ```
 
-**refute_line**: asserts `$output` does *not* contain given line
+### refute_line
+asserts `$output` does *not* contain given line
 
 ```
 run my-command
