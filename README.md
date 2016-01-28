@@ -118,6 +118,14 @@ run my-command
 assert_output_contains "results"
 ```
 
+**refute_output_contains**: asserts `$output` does not contain argument
+
+```
+run my-command
+
+refute_output_contains "unicorn"
+```
+
 **assert_line**: asserts `$output` contains given line (at optional line index)
 
 ```
