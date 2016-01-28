@@ -64,6 +64,16 @@ assert_contains() {
   }
 }
 
+refute_contains() {
+  local haystack="$1"
+  local needle="$2"
+  ! assert_contains "$haystack" "$needle" || {
+    { echo "expected:       $haystack"
+      echo "not to contain: $needle"
+    } | flunk
+  }
+}
+
 assert_starts_with() {
   if [ "$1" = "${1#${2}}" ]; then
     { echo "expected: $1"

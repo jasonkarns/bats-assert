@@ -90,6 +90,12 @@ assert_equal expected actual
 assert_contains foobar oo
 ```
 
+**refute_contains**: asserts x does not contain y
+
+```
+refute_contains foobar baz
+```
+
 **assert_starts_with**: asserts x starts with y
 
 ```
