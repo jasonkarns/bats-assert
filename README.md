@@ -90,6 +90,12 @@ assert_equal expected actual
 assert_contains foobar oo
 ```
 
+**refute_contains**: asserts x does not contain y
+
+```
+refute_contains foobar baz
+```
+
 **assert_starts_with**: asserts x starts with y
 
 ```
@@ -110,6 +116,14 @@ assert_output "my results"
 run my-command
 
 assert_output_contains "results"
+```
+
+**refute_output_contains**: asserts `$output` does not contain argument
+
+```
+run my-command
+
+refute_output_contains "unicorn"
 ```
 
 **assert_line**: asserts `$output` contains given line (at optional line index)

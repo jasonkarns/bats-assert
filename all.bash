@@ -64,6 +64,16 @@ assert_contains() {
   }
 }
 
+refute_contains() {
+  local haystack="$1"
+  local needle="$2"
+  ! assert_contains "$haystack" "$needle" || {
+    { echo "expected:       $haystack"
+      echo "not to contain: $needle"
+    } | flunk
+  }
+}
+
 assert_starts_with() {
   if [ "$1" = "${1#${2}}" ]; then
     { echo "expected: $1"
@@ -86,6 +96,14 @@ assert_output_contains() {
   else expected="$1"
   fi
   assert_contains "$output" "$expected"
+}
+
+refute_output_contains() {
+  local expected
+  if [ $# -eq 0 ]; then expected="$(cat -)"
+  else expected="$1"
+  fi
+  refute_contains "$output" "$expected"
 }
 
 assert_line() {
