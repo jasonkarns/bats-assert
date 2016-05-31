@@ -57,7 +57,7 @@ assert_not_equal() {
 assert_contains() {
   local haystack="$1"
   local needle="$2"
-  echo "$haystack" | $(type -p ggrep grep | head -1) -F "$needle" >/dev/null || {
+  echo "$haystack" | $(type -p ggrep grep | head -1) -F -- "$needle" >/dev/null || {
     { echo "expected:   $haystack"
       echo "to contain: $needle"
     } | flunk
