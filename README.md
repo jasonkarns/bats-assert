@@ -1,3 +1,5 @@
+**DEPRECATED** in favor of https://github.com/ztombol/bats-assert
+
 # bats-assert
 Assertion library for BATS (Bash Automated Testing System)
 
