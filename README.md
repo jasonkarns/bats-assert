@@ -1,4 +1,4 @@
-**DEPRECATED** in favor of https://github.com/ztombol/bats-assert
+**DEPRECATED** in favor of [jasonkarns/bats-assert-1](https://github.com/jasonkarns/bats-assert-1), itself forked from [ztombol/bats-assert](https://github.com/ztombol/bats-assert) while ztombol has gone quiet. Eventually hoping for it to live under the [bats-core](https://github.com/bats-core) org: https://github.com/bats-core/bats-core/issues/44
 
 # bats-assert
 Assertion library for BATS (Bash Automated Testing System)
@@ -24,7 +24,7 @@ load helpers/assertions/all
 Also available as an [npm module](https://www.npmjs.com/package/bats-assert) if you're into that sort of thing.
 
 ``` sh
-npm install --save-dev bats-assert
+npm install --save-dev bats-assert@1.1.1
 ```
 
 then in `test/test_helper.bash`:
